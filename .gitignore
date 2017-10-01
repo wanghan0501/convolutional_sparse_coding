@@ -41,3 +41,10 @@ xcuserdata
 # Carthage/Checkouts
 
 Carthage/Build
+
+# cache files
+**/.*.jpg
+**/.*.m
+**/Thumbs.db
+**/._*
+**/.DS_store
