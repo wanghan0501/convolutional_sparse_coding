@@ -19,8 +19,8 @@ load('Data/streak_dict.mat')
 
 % load test data
 load('Data/data_200.mat')
-s0=bg(:,:,2);
-s=streak(:,:,2);
+s0=bg(:,:,6);
+s=streak(:,:,6);
 %SingleRainImage.jpg
 s=single(s);
 
@@ -139,3 +139,12 @@ figure;
 imshow(s)
 % colormap(gray)
 % axis image; axis off;
+
+streak_psnr=psnr(single(s0),single(s));
+fprintf('streak psnr is %f\n',streak_psnr);
+streak_mse=mse(single(s0),single(s));
+fprintf('streak mse is %f\n',streak_mse);
+repaire_psnr=psnr(single(s0),single(abs(xn)));
+fprintf('repaire psnr is %f\n',repaire_psnr);
+repaire_mse=mse(single(s0),single(xn));
+fprintf('repaire mse is %f\n',repaire_mse);
