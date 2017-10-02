@@ -48,3 +48,6 @@ Carthage/Build
 **/Thumbs.db
 **/._*
 **/.DS_store
+
+# matlab cache files
+**/*.asv
