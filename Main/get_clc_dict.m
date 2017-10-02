@@ -1,24 +1,20 @@
-% % Script demonstrating usage of the cbpdndl function.
-% %
-% % Author: Brendt Wohlberg <brendt@lanl.gov>  Modified: 2015-07-30
-% %
-% % This file is part of the SPORCO library. Details of the copyright
-% % and user license can be found in the 'Copyright' and 'License' files
-% % distributed with the library.
-%
+%% get convolutional low-rank coding dictionary
 
 clear
 close all
-load('Data/data_200.mat')
+load('Data/train_img.mat')
 addpath(genpath('C:\Users\CAESAR\Desktop\phd\CV\code'));
 
-dic_atoms=20;
-D0 = zeros(16,16,dic_atoms);
-D0(3:15,3:15,:) = randn(13,13,dic_atoms);
+%dic_atoms=20;
+%D0 = zeros(16,16,dic_atoms);
+%D0(3:15,3:15,:) = randn(13,13,dic_atoms);
+
+% Construct initial dictionary
+D0 = zeros(8,8,32, 'single');
+D0(3:6,3:6,:) = single(randn(4,4,32));
 
 % get traning images
-train_img=streak-bg;
-train_img=train_img(:,:,1:100);
+train_img=train_img(:,:,1:150);
 
 % Set up cbpdndl parameters
 lambda = 0.01;
