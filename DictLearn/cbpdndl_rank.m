@@ -1,6 +1,6 @@
 function [D, Y, optinf] = cbpdndl_rank(D0, S, lambda, opt)
 
-% cbpdndl -- Convolutional BPDN Dictionary Learning
+% cbpdndl_rank -- Convolutional BPDN Dictionary Learning
 %
 %         argmin_{x_m,d_m} (1/2) \sum_k ||\sum_m d_m * x_k,m - s_k||_2^2 +
 %                           lambda \sum_k \sum_m ||x_k,m||_1
@@ -10,7 +10,7 @@ function [D, Y, optinf] = cbpdndl_rank(D0, S, lambda, opt)
 %         main linear systems (see wohlberg-2014-efficient).
 %
 % Usage:
-%       [D, Y, optinf] = cbpdndl(D0, S, lambda, opt)
+%       [D, Y, optinf] = cbpdndl_rank(D0, S, lambda, opt)
 %
 % Input:
 %       D0          Initial dictionary

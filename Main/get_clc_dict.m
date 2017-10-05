@@ -2,7 +2,7 @@
 
 clear
 close all
-load('Data/train_img.mat')
+load('Data/data_200.mat')
 addpath(genpath('C:\Users\CAESAR\Desktop\phd\CV\code'));
 
 %dic_atoms=20;
@@ -14,7 +14,8 @@ D0 = zeros(8,8,32, 'single');
 D0(3:6,3:6,:) = single(randn(4,4,32));
 
 % get traning images
-train_img=train_img(:,:,1:150);
+train_img=streak-bg;
+train_img=train_img(:,:,10:150);
 
 % Set up cbpdndl parameters
 lambda = 0.01;
