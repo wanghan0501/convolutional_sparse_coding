@@ -3,7 +3,6 @@
 clear
 close all
 load('Data/data_200.mat')
-addpath(genpath('C:\Users\CAESAR\Desktop\phd\CV\code'));
 
 %dic_atoms=20;
 %D0 = zeros(16,16,dic_atoms);

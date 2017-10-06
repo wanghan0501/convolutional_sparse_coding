@@ -3,7 +3,6 @@
 clc;
 clear;
 
-addpath(genpath('C:\Users\CAESAR\Desktop\phd\CV\code'));
 % load data images
 load ('Data/data_200.mat')
 

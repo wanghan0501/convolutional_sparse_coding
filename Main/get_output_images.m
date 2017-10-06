@@ -1,5 +1,4 @@
 clear all
-addpath(genpath('C:\Users\CAESAR\Desktop\phd\CV\code'));
 
 sporco_p0 = which('sporco');
 sporco_K = strfind(sporco_p0, filesep);
