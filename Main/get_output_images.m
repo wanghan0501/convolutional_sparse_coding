@@ -53,7 +53,7 @@ for i=1:10
         for c=1:CHANNEL
             xn(:,:,c)=xn(:,:,c)+residue(:,:,c);
             D=bg_dict;
-            lambda_n=max(1.35-0.435*i,0.001);
+            lambda_n=max(0.65-0.25*i,0.001);
             opt_n = [];
             opt_n.Verbose = 10;
             opt_n.MaxMainIter = 20;
@@ -94,7 +94,7 @@ for i=1:10
             xt(:,:,c)=xt(:,:,c)+residue(:,:,c);
             D=streak_dict;
             
-            lambda_t=max(5.30-0.72*i,1.22);   %color1 and 2
+            lambda_t=max(3.50-0.19*i,0.08);   
             opt_t = [];
             opt_t.Verbose = 1;
             opt_t.MaxMainIter = 30;
@@ -128,7 +128,7 @@ axis image; axis off;
 
 subplot(223)
 imshow(xt)
-title('分离出来的背景图')
+title('分离出来的伪影图')
 colormap(gray)
 axis image; axis off;
 
@@ -142,7 +142,6 @@ axis image; axis off;
 % imshow(s1)
 % colormap(gray)
 % axis image; axis off;
-
 
 
 streak_psnr=psnr(single(s0),single(s));
