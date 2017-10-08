@@ -18,8 +18,8 @@ load('Data/streak_dict.mat')
 
 % load test data
 load('Data/data_200.mat')
-s0=bg(:,:,10);
-s=streak(:,:,10);
+s0=bg(:,:,5);
+s=streak(:,:,5);
 %SingleRainImage.jpg
 s=single(s);
 
@@ -114,19 +114,27 @@ for i=1:10
     end
 end
 
-figure;
+subplot(221)
 imshow((s0))
+title('真实值')
 colormap(gray)
 axis image; axis off;
 
+subplot(222)
+imshow(s)
+title('输入图')
+colormap(gray)
+axis image; axis off;
 
-figure;
+subplot(223)
 imshow(xt)
+title('分离出来的背景图')
 colormap(gray)
 axis image; axis off;
 
-figure;
+subplot(224)
 imshow((xn))
+title('最终的结果图')
 colormap(gray)
 axis image; axis off;
 
@@ -134,10 +142,8 @@ axis image; axis off;
 % imshow(s1)
 % colormap(gray)
 % axis image; axis off;
-figure;
-imshow(s)
-% colormap(gray)
-% axis image; axis off;
+
+
 
 streak_psnr=psnr(single(s0),single(s));
 fprintf('streak psnr is %f\n',streak_psnr);
