@@ -2,7 +2,8 @@
 
 clear
 close all
-load('Data/data_200.mat')
+load('Data/bg.mat')
+load('Data/streak.mat')
 
 %dic_atoms=20;
 %D0 = zeros(16,16,dic_atoms);
