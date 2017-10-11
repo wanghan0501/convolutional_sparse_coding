@@ -53,7 +53,7 @@ for i=1:10
         for c=1:CHANNEL
             xn(:,:,c)=xn(:,:,c)+residue(:,:,c);
             D=bg_dict;
-            lambda_n=max(0.65-0.25*i,0.001);
+            lambda_n=max(0.15-0.05*i,0.01);
             opt_n = [];
             opt_n.Verbose = 10;
             opt_n.MaxMainIter = 20;
@@ -94,7 +94,7 @@ for i=1:10
             xt(:,:,c)=xt(:,:,c)+residue(:,:,c);
             D=streak_dict;
             
-            lambda_t=max(3.50-0.19*i,0.08);   
+            lambda_t=max(3.50-0.19*i,0.10);   
             opt_t = [];
             opt_t.Verbose = 1;
             opt_t.MaxMainIter = 30;
@@ -127,13 +127,13 @@ colormap(gray)
 axis image; axis off;
 
 subplot(223)
-imshow(xt)
+imshow(xt,[])
 title('分离出来的伪影图')
 colormap(gray)
 axis image; axis off;
 
 subplot(224)
-imshow((xn))
+imshow((xn),[])
 title('最终的结果图')
 colormap(gray)
 axis image; axis off;
