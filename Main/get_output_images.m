@@ -17,7 +17,8 @@ load('Data/bg_dict.mat')
 load('Data/streak_dict.mat')
 
 % load test data
-load('Data/data_200.mat')
+load('Data/bg.mat')
+load('Data/streak.mat')
 s0=bg(:,:,5);
 s=streak(:,:,5);
 %SingleRainImage.jpg
@@ -116,25 +117,25 @@ end
 
 subplot(221)
 imshow((s0))
-title('真实值')
+title('origin')
 colormap(gray)
 axis image; axis off;
 
 subplot(222)
 imshow(s)
-title('输入图')
+title('input')
 colormap(gray)
 axis image; axis off;
 
 subplot(223)
 imshow(xt,[])
-title('分离出来的伪影图')
+title('bg')
 colormap(gray)
 axis image; axis off;
 
 subplot(224)
 imshow((xn),[])
-title('最终的结果图')
+title('result')
 colormap(gray)
 axis image; axis off;
 

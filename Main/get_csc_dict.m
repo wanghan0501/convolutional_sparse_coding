@@ -4,10 +4,10 @@ clc;
 clear;
 
 % load data images
-load ('Data/data_200.mat')
+load ('Data/bg.mat')
 
 % Training images
-S0 = bg(:,:,1:5);
+S0 = bg(:,:,10:145);
 
 % Filter input images and compute highpass images
 npd = 16;
@@ -23,7 +23,7 @@ D0(3:6,3:6,:) = single(randn(4,4,32));
 lambda = 0.2;
 opt = [];
 opt.Verbose = 1;
-opt.MaxMainIter = 1000;
+opt.MaxMainIter = 50;
 opt.rho = 50*lambda + 0.5;
 opt.sigma = size(Sh,3);
 opt.AutoRho = 1;
