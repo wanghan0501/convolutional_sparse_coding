@@ -54,7 +54,7 @@ for i=1:10
         for c=1:CHANNEL
             xn(:,:,c)=xn(:,:,c)+residue(:,:,c);
             D=bg_dict;
-            lambda_n=max(0.15-0.05*i,0.01);
+            lambda_n=max(0.3-0.15*i,0.001);
             opt_n = [];
             opt_n.Verbose = 10;
             opt_n.MaxMainIter = 20;
@@ -78,7 +78,7 @@ for i=1:10
             opts.method  = 'l1';
             
             % Setup mu
-            mu           = 1.2;
+            mu           = 0.9;
             xnnnn = deconvtv(g, H, mu, opts);
             xn1(:,:,c)=xnnnn.f;
             
@@ -95,7 +95,7 @@ for i=1:10
             xt(:,:,c)=xt(:,:,c)+residue(:,:,c);
             D=streak_dict;
             
-            lambda_t=max(3.50-0.19*i,0.10);   
+            lambda_t=max(3.00-0.19*i,0.1);   
             opt_t = [];
             opt_t.Verbose = 1;
             opt_t.MaxMainIter = 30;
