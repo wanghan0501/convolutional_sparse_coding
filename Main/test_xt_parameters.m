@@ -120,7 +120,7 @@ for b1=2:0.1:4
             end
             repaire_psnr=psnr(single(s0),single(abs(xn)));
             repaire_mse=mse(single(s0),single(xn));
-            fprintf(file,'%0.5f,%0.5f,%0.5f,%0.5f,%0.5f\n',a1,a2,a3,b1,b2,b3,repaire_psnr,repaire_mse);
+            fprintf(file,'%0.5f,%0.5f,%0.5f,%0.5f,%0.5f\n',b1,b2,b3,repaire_psnr,repaire_mse);
         end
     end
 end
