@@ -95,7 +95,7 @@ for i=1:10
             xt(:,:,c)=xt(:,:,c)+residue(:,:,c);
             D=streak_dict;
             
-            lambda_t=max(3.00-0.19*i,0.1);   
+            lambda_t=max(3.00-0.15*i,0.05);   
             opt_t = [];
             opt_t.Verbose = 1;
             opt_t.MaxMainIter = 30;
