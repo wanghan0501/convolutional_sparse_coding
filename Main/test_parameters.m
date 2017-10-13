@@ -19,8 +19,8 @@ load('Data/streak_dict.mat')
 % load test data
 load('Data/bg.mat')
 load('Data/streak.mat')
-s0=bg(:,:,5);
-s=streak(:,:,5);
+s0=bg(:,:,6);
+s=streak(:,:,6);
 %SingleRainImage.jpg
 s=single(s);
 
